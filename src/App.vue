@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <Header></Header>
+    <Navbar class="navbar"></Navbar>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Navbar from './components/navbar'
+import Header from './components/header'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Navbar,Header
   }
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  overflow: auto;
+  .navbar{
+    float: left;
+    width: 10%;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+    text-align: center;
+    background-color: #324057;
+  }
+  .view{
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+    width: 90%;
+    float: right;
+    display: inline-block; 
+  }
 }
 </style>
